@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="module" src="../dist/BluetoothLedStrip.js"></script>
+
+		<script type="module">
+
+			import { BluetoothLedStrip } from '../dist/BluetoothLedStrip.js';
+
+			var device;
+
+			window.connect = function ()
+			{
+				device = new BluetoothLedStrip.Device();
+				device.connect();
+			}
+
+			window.setRGB = function ()
+			{
+				device.setRGB(0,255,0);
+			}
+
+		</script>
+
+		<button onclick="connect();">Connect</button>
+		<br /><br />
+		<button onclick="setRGB();">setRGB</button>
+
+	</body>
+</html>
