@@ -9,6 +9,9 @@ export namespace BluetoothLedStrip
 		SPEED = 0x09,
 	};
 
+	const guidService: string = '0000fff0-0000-1000-8000-00805f9b34fb';
+	const guidCharacteristic: string = '0000fff1-0000-1000-8000-00805f9b34fb';
+
 	export class Device
 	{
 		characteristic: any = undefined;
@@ -25,7 +28,7 @@ export namespace BluetoothLedStrip
 			let device: any;
 			try
 			{
-				const options = { filters: [ { services: ['0000fff0-0000-1000-8000-00805f9b34fb'] } ] };
+				const options = { filters: [ { services: [guidService] } ] };
 				device = await (window.navigator as any).bluetooth.requestDevice(options);
 
 				if (device != undefined)
@@ -45,10 +48,10 @@ export namespace BluetoothLedStrip
 			const server = await device?.gatt.connect();
 
 			// get service
-			const service = await server?.getPrimaryService('0000fff0-0000-1000-8000-00805f9b34fb');
+			const service = await server?.getPrimaryService(guidService);
 
 			// get characteristic
-			this.characteristic = await service?.getCharacteristic('0000fff1-0000-1000-8000-00805f9b34fb');
+			this.characteristic = await service?.getCharacteristic(guidCharacteristic);
 
 			// call connect callback
 			if (device != undefined)
@@ -74,7 +77,6 @@ export namespace BluetoothLedStrip
 		}
 
 		// set switch
-//xxx toggle only
 		setSwitch(switchBoolean: number)
 		{
 			this.send(Method.SWITCH, new Uint8Array([switchBoolean]));
@@ -82,14 +84,36 @@ export namespace BluetoothLedStrip
 
 		// set mode
 // 0 fade
+
+// flashing
 // 1 blue blink, 2 green bloink 3 red blionk 4 cyan blionk 5 lilalc blonk 6 yellow blonk 7 white bloink
+
+// breathing
 // 8 soft bloink blue - 14 white soft bloink
+
+// strobe
 // 15 blue dripple flash - 21 white dripple flash
-// 22 blue/red fade 23 white lila cfade 24 green white lila fade 25 white green blue fade 26 white red blue fade
-// 27 white blue green fade 28 lila white blue fade 29 white lila green fade
-// 30 red green blue blink 31 white green blue red lila blink
-// 32 red green blue by step fade 33 white green blue red lila step fade 34,35,36 fade
+
+// gradient
+// 22 blue/red fade (RBR) 23 white lila cfade (WVW) 24 green white lila fade (GVG) 25 white green blue fade (BYB) 26 white red blue fade (RCR) 27 white blue green fade (YCY) 28 lila white blue fade (VCV) 29 white lila green fade (VYV)
+
+// ??? three color transistions
+// ??? colorful jump
+// ??? three color alternating breathing
+// ??? colorful alternate breathing
+// ??? colorful gradient
+// ??? six color gradient
+// ??? rgb gradient
+// 30 red green blue 							blink
+// 31 white green blue red lila 				blink
+// 32 red green blue 							step by step fade
+// 33 white green blue red lila 				step by step fade
+// 34,35,36 										fade
+
+// three color flashing              colorful flashing
 // 37 red green blue blink wit pause 38 white green blue red lila blink with pause
+
+// three color strobe                     colorful strobe
 // 39 red green blue blink wit pause long 40 white green blue red lila blink with pause long
 
 		setMode(mode: number)
