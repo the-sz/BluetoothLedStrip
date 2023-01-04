@@ -7,6 +7,9 @@
 
 	<body>
 
+		Status: <span id="status"></span>
+		<br /><br />
+
 		<script type="module" src="../dist/BluetoothLedStrip.js"></script>
 
 		<script type="module">
@@ -15,21 +18,41 @@
 
 			var device;
 
+			// connect callback
+			function onConnect(device)
+			{
+				document.getElementById('status').innerHTML = 'Device ' + device.name + ' connected';
+			}
+
+			// disconnect callback
+			function onDisconnect(device)
+			{
+				document.getElementById('status').innerHTML = 'Device ' + device.name + ' disconnected';
+			}
+
+			// 'Connect' button
 			window.connect = function ()
 			{
 				device = new BluetoothLedStrip.Device();
-				device.connect();
+				device.connect(onConnect, onDisconnect);
 			}
 
+			// 'setRGB' button
 			window.setRGB = function ()
 			{
-				device.setRGB(0,255,0);
+				const red = document.getElementById('red').value;
+				const green = document.getElementById('green').value;
+				const blue = document.getElementById('blue').value;
+				device.setRGB(red, green, blue);
 			}
 
 		</script>
 
 		<button onclick="connect();">Connect</button>
 		<br /><br />
+		R <input type="text" id="red" size="3" value="255">
+		G <input type="text" id="green" size="3" value="0">
+		B <input type="text" id="blue" size="3" value="0">
 		<button onclick="setRGB();">setRGB</button>
 
 	</body>
