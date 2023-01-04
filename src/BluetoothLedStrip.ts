@@ -74,12 +74,24 @@ export namespace BluetoothLedStrip
 		}
 
 		// set switch
+//xxx toggle only
 		setSwitch(switchBoolean: number)
 		{
 			this.send(Method.SWITCH, new Uint8Array([switchBoolean]));
 		}
 
 		// set mode
+// 0 fade
+// 1 blue blink, 2 green bloink 3 red blionk 4 cyan blionk 5 lilalc blonk 6 yellow blonk 7 white bloink
+// 8 soft bloink blue - 14 white soft bloink
+// 15 blue dripple flash - 21 white dripple flash
+// 22 blue/red fade 23 white lila cfade 24 green white lila fade 25 white green blue fade 26 white red blue fade
+// 27 white blue green fade 28 lila white blue fade 29 white lila green fade
+// 30 red green blue blink 31 white green blue red lila blink
+// 32 red green blue by step fade 33 white green blue red lila step fade 34,35,36 fade
+// 37 red green blue blink wit pause 38 white green blue red lila blink with pause
+// 39 red green blue blink wit pause long 40 white green blue red lila blink with pause long
+
 		setMode(mode: number)
 		{
 			this.send(Method.MODE, new Uint8Array([mode]));

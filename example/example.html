@@ -46,6 +46,34 @@
 				device.setRGB(red, green, blue);
 			}
 
+			// 'setBrightness' button
+			window.setBrightness = function ()
+			{
+				const brightness = document.getElementById('brightness').value;
+				device.setBrightness(brightness);
+			}
+
+			// 'setSwitch' button
+			window.setSwitch = function ()
+			{
+				const value = document.getElementById('switch').value;
+				device.setSwitch(value);
+			}
+
+			// 'setMode' button
+			window.setMode = function ()
+			{
+				const mode = document.getElementById('mode').value;
+				device.setMode(mode);
+			}
+
+			// 'setSpeed' button
+			window.setSpeed = function ()
+			{
+				const speed = document.getElementById('speed').value;
+				device.setSpeed(speed);
+			}
+
 		</script>
 
 		<button onclick="connect();">Connect</button>
@@ -54,6 +82,18 @@
 		G <input type="text" id="green" size="3" value="0">
 		B <input type="text" id="blue" size="3" value="0">
 		<button onclick="setRGB();">setRGB</button>
+		<br /><br />
+		Brightness <input type="text" id="brightness" size="3" value="0">
+		<button onclick="setBrightness();">setBrightness</button>
+		<br /><br />
+		Switch <input type="text" id="switch" size="3" value="0">
+		<button onclick="setSwitch();">setSwitch</button>
+		<br /><br />
+		Mode <input type="text" id="mode" size="3" value="0">
+		<button onclick="setMode();">setMode</button>
+		<br /><br />
+		Speed <input type="text" id="speed" size="3" value="0">
+		<button onclick="setSpeed();">setSpeed</button>
 
 	</body>
 </html>
