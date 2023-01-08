@@ -37,14 +37,14 @@
 			}
 
 			// 'Connect' button
-			window.connect = function ()
+			window.connect = function()
 			{
 				device = new BluetoothLedStrip.Device();
 				device.connect(onConnect, onDisconnect, onError);
 			}
 
 			// 'setRGB' button
-			window.setRGB = function ()
+			window.setRGB = function()
 			{
 				const red = document.getElementById('red').value;
 				const green = document.getElementById('green').value;
@@ -53,28 +53,28 @@
 			}
 
 			// 'setBrightness' button
-			window.setBrightness = function ()
+			window.setBrightness = function()
 			{
 				const brightness = document.getElementById('brightness').value;
 				device.setBrightness(brightness);
 			}
 
 			// 'setSwitch' button
-			window.setSwitch = function ()
+			window.setSwitch = function()
 			{
 				const value = document.getElementById('switch').value;
 				device.setSwitch(value);
 			}
 
 			// 'setMode' button
-			window.setMode = function ()
+			window.setMode = function()
 			{
 				const mode = document.getElementById('mode').value;
 				device.setMode(mode);
 			}
 
 			// 'setSpeed' button
-			window.setSpeed = function ()
+			window.setSpeed = function()
 			{
 				const speed = document.getElementById('speed').value;
 				device.setSpeed(speed);
