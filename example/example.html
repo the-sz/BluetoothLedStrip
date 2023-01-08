@@ -30,11 +30,17 @@
 				document.getElementById('status').innerHTML = 'Device ' + device.name + ' disconnected';
 			}
 
+			// error callback
+			function onError(exception)
+			{
+				document.getElementById('status').innerHTML = 'Error ' + exception + ' occured';
+			}
+
 			// 'Connect' button
 			window.connect = function ()
 			{
 				device = new BluetoothLedStrip.Device();
-				device.connect(onConnect, onDisconnect);
+				device.connect(onConnect, onDisconnect, onError);
 			}
 
 			// 'setRGB' button
