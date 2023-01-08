@@ -28,23 +28,23 @@ And call the few functions.
 This will open the Bluetooth dialog in the browser.
 
 ### Call functions to control the LEDs
-#### device.setRGB
+#### device.setRGB()
 	device.setRGB(red, green, blue);
 Set LEDs to the given value. Each parameter can be between 0 and 255.
 
-#### device.setBrightness
+#### device.setBrightness()
 	device.setBrightness(brightness);
 Set the overall brightness between 0 and 255.
 
-#### device.setSwitch
+#### device.setSwitch()
 	device.setSwitch(value);
 Toggle on/off. The parameter `value` seems to be ignroed by the device.
 
-#### device.setMode
+#### device.setMode()
 	device.setMode(mode);
 Show a specifc animation. `mode` can be between 0 and 40.
 
-#### device.setSpeed
+#### device.setSpeed()
 	device.setSpeed(speed);
 Set the animation speed between 0 (fastest) and 255 (slowest).
 
