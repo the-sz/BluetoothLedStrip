@@ -14,7 +14,8 @@ See https://the-sz.com/products/bluetooth_led_strip/ for a real life demo.
 ## Usage
 Just include the script
 
-	<script type="module" src="https://cdn.jsdelivr.net/gh/the-sz/BluetoothLedStrip/dist/BluetoothLedStrip.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/gh/the-sz/BluetoothLedStrip/dist/BluetoothLedStrip.js">
+	</script>
 
 And call the few functions.
 
