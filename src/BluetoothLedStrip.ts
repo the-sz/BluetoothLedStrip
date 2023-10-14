@@ -11,7 +11,7 @@ export namespace BluetoothLedStrip
 
 	export enum DeviceType
 	{
-		UNKNWON,
+		UNKNOWN,
 		MAGIC_STRIP,
 		LED_NET_WF,
 	};
@@ -24,7 +24,7 @@ export namespace BluetoothLedStrip
 
 	export class Device
 	{
-		deviceType: DeviceType = DeviceType.UNKNWON;
+		deviceType: DeviceType = DeviceType.UNKNOWN;
 		counter = 0;
 		lastMode: number = 1;
 		lastBrightness: number = 100;

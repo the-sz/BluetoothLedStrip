@@ -4,7 +4,9 @@
 Control LED Strips that use the 'MagicStrip' [iOS](https://apps.apple.com/us/app/magicstrip-rgb/id1190522748)/[Android](https://play.google.com/store/apps/details?id=com.jtkj.magicstrip) and 'Zengge' [Android](https://play.google.com/store/apps/details?id=com.zengge.blev2) app.
 
 ## Supported Devices
-Tested with a Bluetooth device named 'HTZM', but should work also with 'JMC-A', 'JMC-B', 'MAGIC_SHOE', 'MAGIC_LAMP', 'LCF', 'CoolStripMic', 'CRGB', 'FS0001' and 'FS0002' devices. Further devices starting with the Bluetooth device name 'LEDnetWF'.
+Two different protocols/devices are supported:
+- Tested with a Bluetooth device named 'HTZM', but should work also with 'JMC-A', 'JMC-B', 'MAGIC_SHOE', 'MAGIC_LAMP', 'LCF', 'CoolStripMic', 'CRGB', 'FS0001' and 'FS0002' devices.
+- Devices starting with the Bluetooth device name 'LEDnetWF'.
 
 ## Demo
 See [example/example.html](example/example.html) for usage.
@@ -50,3 +52,6 @@ Set the animation speed between 0 (fastest) and 255 (slowest) for MagicStrip or 
 
 ## License
 [GNU General Public License v3.0](LICENSE.md)
+
+## Acknowledgement
+https://github.com/8none1/zengge_lednetwf did the protocol reverse engineering on the LEDnetWF protocol.

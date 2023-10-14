@@ -20,7 +20,7 @@ export var BluetoothLedStrip;
     ;
     let DeviceType;
     (function (DeviceType) {
-        DeviceType[DeviceType["UNKNWON"] = 0] = "UNKNWON";
+        DeviceType[DeviceType["UNKNOWN"] = 0] = "UNKNOWN";
         DeviceType[DeviceType["MAGIC_STRIP"] = 1] = "MAGIC_STRIP";
         DeviceType[DeviceType["LED_NET_WF"] = 2] = "LED_NET_WF";
     })(DeviceType = BluetoothLedStrip.DeviceType || (BluetoothLedStrip.DeviceType = {}));
@@ -31,7 +31,7 @@ export var BluetoothLedStrip;
     const guidCharacteristicLedNetWf = '0000ff01-0000-1000-8000-00805f9b34fb';
     class Device {
         constructor() {
-            this.deviceType = DeviceType.UNKNWON;
+            this.deviceType = DeviceType.UNKNOWN;
             this.counter = 0;
             this.lastMode = 1;
             this.lastBrightness = 100;
