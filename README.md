@@ -1,10 +1,10 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 # BluetoothLedStrip
-Control LED Strips that use the 'MagicStrip' [iOS](https://apps.apple.com/us/app/magicstrip-rgb/id1190522748)/[Android](https://play.google.com/store/apps/details?id=com.jtkj.magicstrip) app.
+Control LED Strips that use the 'MagicStrip' [iOS](https://apps.apple.com/us/app/magicstrip-rgb/id1190522748)/[Android](https://play.google.com/store/apps/details?id=com.jtkj.magicstrip) and 'Zengge' [Android](https://play.google.com/store/apps/details?id=com.zengge.blev2) app.
 
 ## Supported Devices
-Tested with a Bluetooth device named 'HTZM', but should work also with 'JMC-A', 'JMC-B', 'MAGIC_SHOE', 'MAGIC_LAMP', 'LCF', 'CoolStripMic', 'CRGB', 'FS0001' and 'FS0002' devices.
+Tested with a Bluetooth device named 'HTZM', but should work also with 'JMC-A', 'JMC-B', 'MAGIC_SHOE', 'MAGIC_LAMP', 'LCF', 'CoolStripMic', 'CRGB', 'FS0001' and 'FS0002' devices. Further devices starting with the Bluetooth device name 'LEDnetWF'.
 
 ## Demo
 See [example/example.html](example/example.html) for usage.
@@ -34,19 +34,19 @@ Set LEDs to the given value. Each parameter can be between 0 and 255.
 
 #### device.setBrightness()
 	device.setBrightness(brightness);
-Set the overall brightness between 0 and 255.
+Set the overall brightness between 0 and 255 for MagicStrip or 0 and 100 for LEDnetWF.
 
 #### device.setSwitch()
 	device.setSwitch(value);
-Toggle on/off. The parameter `value` seems to be ignroed by the device.
+Toggle on/off. The parameter `value` seems to be ignored by the 'MagicStrip' device.
 
 #### device.setMode()
 	device.setMode(mode);
-Show a specifc animation. `mode` can be between 0 and 40.
+Show a specifc animation. `mode` can be between 0 and 40 (MagicStrip) or 1 and 113 (LEDnetWF).
 
 #### device.setSpeed()
 	device.setSpeed(speed);
-Set the animation speed between 0 (fastest) and 255 (slowest).
+Set the animation speed between 0 (fastest) and 255 (slowest) for MagicStrip or 0 (slowest) and 100 (fastest) for LEDnetWF.
 
 ## License
 [GNU General Public License v3.0](LICENSE.md)
